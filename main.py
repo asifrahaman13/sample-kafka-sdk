@@ -1,19 +1,18 @@
-from example_package_asifr_berhampore.example_package_asifr_berhampore import TrafficProcessingSDK
-
+# Import all the packages and modules required for the FastAPI server.
+from example_package_asifr_berhampore.example_package_asifr_berhampore import (
+    TrafficProcessingSDK,
+)
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-
 from fastapi import FastAPI
-
 from fastapi import FastAPI, Request
 from fastapi import FastAPI, Request
-
 from starlette.concurrency import iterate_in_threadpool
 
-
+# Create an instance of the FastAPI class.
 app = FastAPI()
 
-
+# Define the origins for the CORS middleware.
 origins = [
     "*",
 ]
@@ -27,12 +26,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+# Create an instance of the TrafficProcessingSDK class and consume
 kafka_bootstrap_servers = "localhost:9092"
 group_id = "traffic-processing-group"
 sdk = TrafficProcessingSDK(kafka_bootstrap_servers, group_id)
 
 
+# Create a sample middleware. 
 @app.middleware("http")
 async def some_middleware(request: Request, call_next):
     response = await call_next(request)
@@ -54,6 +54,7 @@ data = {"1": "item1", "2": "item2"}
 @app.get("/")
 async def read_items():
     return {"message": "Welcome to the FastAPI server"}
+
 
 @app.get("/items/")
 async def read_items():
