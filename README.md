@@ -23,7 +23,7 @@ bin/kafka-topics.sh --create --topic test-topic --bootstrap-server localhost:909
 ```
 
 
-## Run the kafka server
+## Run the code 
 Now clone the repository.
 
 ```
