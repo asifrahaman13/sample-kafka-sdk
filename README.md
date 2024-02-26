@@ -42,6 +42,12 @@ Activate the virtual environment
 source .venv/bin/activate
 ```
 
+Upgrade pip
+
+```
+pip install --upgrade pip
+```
+
 Next you can install the dependencies and packages. 
 
 ```
