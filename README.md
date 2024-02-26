@@ -19,7 +19,7 @@ bin/kafka-server-start.sh config/server.properties
 Next create topics and other configurations
 
 ```
-bin/kafka-topics.sh --create --topic test-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+bin/kafka-topics.sh --create --topic web-logs --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 ```
 
 
@@ -39,13 +39,19 @@ virtualenv .venv
 Activate the virtual environment
 
 ```
-source ./venv/bin/activate
+source .venv/bin/activate
 ```
 
 Next you can install the dependencies and packages. 
 
 ```
 pip install -r requirements.txt
+```
+
+Now install my sdk
+
+```
+pip install -i https://test.pypi.org/simple/ example-package-asifr-berhampore==0.0.1
 ```
 
 
